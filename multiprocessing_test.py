@@ -8,16 +8,17 @@ inputs = tokenizer("Hello, my dog is cute", return_tensors='jax')
 
 
 def froward_func():
-    print("starting func")
+    print(f"Model: {model}")
+    print(f"Input: {inputs}")
     output = model(**inputs)
-    print(output)
+    print(f'Output: {output}')
     return output
 
 
-print(f'Single process:')
+print('Single process:')
 froward_func()
 
-print(f'Multi process:')
+print('\n\nMulti process:')
 forward_process = Process(target=froward_func)
 forward_process.start()
 forward_process.join(timeout=60)
