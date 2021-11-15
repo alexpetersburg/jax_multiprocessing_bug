@@ -17,6 +17,6 @@ print(f'Single process:')
 froward_func()
 
 print(f'Multi process:')
-forward_process = Process(target=froward_func())
+forward_process = Process(target=froward_func)
 forward_process.start()
 forward_process.join()
