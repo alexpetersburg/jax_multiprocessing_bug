@@ -8,6 +8,7 @@ inputs = tokenizer("Hello, my dog is cute", return_tensors='jax')
 
 
 def froward_func():
+    print("starting func")
     output = model(**inputs)
     print(output)
     return output
